@@ -2,7 +2,7 @@
 
 ## Active
 
-- [ ] **Accessibility audit vs. WCAG 2.2 AA**
+- [x] **Accessibility audit vs. WCAG 2.2 AA**
   - Automated scan: axe, WAVE, Lighthouse
   - Keyboard navigation verification
   - Color contrast check (≥ 4.5:1)
