@@ -1,0 +1,69 @@
+<!-- Blog Detail Page -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ post.title }} — Brand Blog{% endblock %}
+
+{% block meta_description %}
+  {{ post.excerpt|default:post.title }}
+{% endblock %}
+
+{% block content %}
+
+  <!-- Article Header -->
+  <section class="py-16 bg-gradient-to-br from-indigo-600 to-purple-700 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-indigo-100 mb-4">
+        <a href="{% url 'blog_list' %}" class="hover:text-white transition">
+          <i class="fa-solid fa-arrow-left mr-2"></i>Back to Blog
+        </a>
+      </p>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{{ post.title }}</h1>
+      <p class="text-indigo-100">Published on {{ post.published_at|date:"F j, Y" }}</p>
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <article class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      {% if post.featured_image %}
+        <img src="{{ post.featured_image.url }}" 
+             alt="{{ post.title }}"
+             class="w-full h-64 sm:h-80 object-cover rounded-xl mb-8">
+      {% endif %}
+
+      <div class="prose prose-lg prose-indigo max-w-none">
+        {{ post.content|linebreaks }}
+      </div>
+
+      <!-- Newsletter CTA -->
+      <div class="mt-16 p-8 bg-gray-50 rounded-xl border border-gray-100">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Enjoyed this article?</h3>
+        <p class="text-gray-600 mb-4">Subscribe to get notified about new posts.</p>
+        
+        <form hx-post="{% url 'newsletter_signup' %}"
+              hx-target="#blog-cta-result"
+              hx-swap="outerHTML"
+              class="flex flex-col sm:flex-row gap-3">
+          {% csrf_token %}
+          <input type="hidden" name="source" value="blog_cta">
+          <input type="email" 
+                 name="email" 
+                 placeholder="your@email.com"
+                 required
+                 class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition">
+          
+          <button type="submit" 
+                  class="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition">
+            Subscribe
+          </button>
+        </form>
+        
+        <div id="blog-cta-result" class="mt-2"></div>
+      </div>
+
+    </div>
+  </article>
+
+{% endblock %}

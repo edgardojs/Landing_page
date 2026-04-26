@@ -1,0 +1,102 @@
+<!-- About Page -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us — Brand{% endblock %}
+
+{% block meta_description %}
+  Learn about our mission, story, and the team behind Brand.
+{% endblock %}
+
+{% block content %}
+
+  <!-- Hero -->
+  <section class="py-20 bg-gradient-to-br from-indigo-600 to-purple-700 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6">About Us</h1>
+      <p class="text-xl text-indigo-100 max-w-2xl mx-auto">
+        Building amazing experiences with modern tools and thoughtful design since 2024.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          We believe in creating tools that empower creators to build beautiful, functional websites without complexity. Our mission is to bridge the gap between design and technology.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 bg-indigo-100 rounded-full flex items-center justify-center">
+            <i class="fa-solid fa-rocket text-2xl text-indigo-600"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Innovation</h3>
+          <p class="text-gray-600">Pushing boundaries with modern technologies</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
+            <i class="fa-solid fa-heart text-2xl text-purple-600"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Passion</h3>
+          <p class="text-gray-600">Built with love for great user experiences</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+            <i class="fa-solid fa-users text-2xl text-green-600"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Community</h3>
+          <p class="text-gray-600">Supporting creators around the world</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Story</h2>
+          <p class="text-gray-600 mb-4">
+            What started as a simple idea has grown into a platform used by thousands of creators worldwide. We started with one goal: make web development accessible without sacrificing quality.
+          </p>
+          <p class="text-gray-600 mb-4">
+            Today, we're proud to support developers, designers, and entrepreneurs building the next generation of web experiences.
+          </p>
+          <a href="{% url 'contact' %}" class="inline-flex items-center text-indigo-600 font-medium hover:text-indigo-700 transition">
+            Get in touch <i class="fa-solid fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+
+        <div class="mt-10 lg:mt-0">
+          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+            <div class="space-y-4">
+              <div class="flex items-center space-x-4">
+                <div class="text-2xl font-bold text-indigo-600">10k+</div>
+                <div class="text-gray-600">Active Users</div>
+              </div>
+              <hr class="border-gray-200">
+              <div class="flex items-center space-x-4">
+                <div class="text-2xl font-bold text-purple-600">500+</div>
+                <div class="text-gray-600">Projects Launched</div>
+              </div>
+              <hr class="border-gray-200">
+              <div class="flex items-center space-x-4">
+                <div class="text-2xl font-bold text-green-600">50+</div>
+                <div class="text-gray-600">Countries Reached</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

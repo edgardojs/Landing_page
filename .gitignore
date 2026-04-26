@@ -1,0 +1,20 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env
+.venv/
+
+# Django local database
+db.sqlite3
+
+# Django collected/media files
+media/
+staticfiles/
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db

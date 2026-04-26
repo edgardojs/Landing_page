@@ -1,0 +1,99 @@
+<!-- Mobile-first Footer -->
+<footer class="bg-gray-900 text-gray-300 py-12">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      
+      <!-- Brand Column -->
+      <div class="col-span-1 md:col-span-2 lg:col-span-1">
+        <span class="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+          Brand
+        </span>
+        <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+          Building amazing experiences with modern tools and thoughtful design.
+        </p>
+        
+        <!-- Social Links -->
+        <div class="mt-6 flex space-x-4">
+          <a href="https://instagram.com" 
+             class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition"
+             aria-label="Instagram">
+            <i class="fa-brands fa-instagram text-xl"></i>
+          </a>
+          <a href="https://twitter.com" 
+             class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition"
+             aria-label="Twitter">
+            <i class="fa-brands fa-x-twitter text-xl"></i>
+          </a>
+          <a href="https://github.com" 
+             class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition"
+             aria-label="GitHub">
+            <i class="fa-brands fa-github text-xl"></i>
+          </a>
+          <a href="https://linkedin.com" 
+             class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-700 transition"
+             aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin text-xl"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="{% url 'home' %}" class="hover:text-white transition">Home</a></li>
+          <li><a href="{% url 'blog_list' %}" class="hover:text-white transition">Blog</a></li>
+          <li><a href="{% url 'about' %}" class="hover:text-white transition">About</a></li>
+          <li><a href="{% url 'contact' %}" class="hover:text-white transition">Contact</a></li>
+          <li><a href="{% url 'landing' %}" class="hover:text-white transition">Landing</a></li>
+        </ul>
+      </div>
+      
+      <!-- Legal -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Legal</h4>
+        <ul class="space-y-3 text-sm">
+          <li><a href="{% url 'privacy' %}" class="hover:text-white transition">Privacy Policy</a></li>
+          <li><a href="{% url 'terms' %}" class="hover:text-white transition">Terms of Service</a></li>
+        </ul>
+      </div>
+      
+      <!-- Newsletter Footer -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Stay Updated</h4>
+        <p class="text-gray-400 text-sm mb-4">Get the latest updates delivered to your inbox.</p>
+        
+        <form hx-post="{% url 'newsletter_signup' %}" 
+              hx-target="#footer-form-result"
+              hx-swap="outerHTML"
+              class="flex flex-col sm:flex-row gap-2">
+          <csrftoken>
+          <input type="email" 
+                 name="email" 
+                 placeholder="your@email.com"
+                 required
+                 class="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500 transition">
+          
+          <button type="submit" 
+                  class="px-4 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition whitespace-nowrap">
+            Subscribe
+          </button>
+        </form>
+        
+        <div id="footer-form-result" class="mt-2"></div>
+      </div>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center">
+      <p class="text-gray-500 text-sm">
+        © 2026 Brand. All rights reserved.
+      </p>
+      
+      <p class="text-gray-500 text-sm mt-2 sm:mt-0">
+        Made with <i class="fa-solid fa-heart text-red-500"></i> and modern tools
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,16 @@
+<!-- Contact Success Message (HTMX Partial) -->
+<div class="p-6 bg-green-50 border border-green-200 rounded-lg text-center">
+  <div class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+    <i class="fa-solid fa-check text-2xl text-green-600"></i>
+  </div>
+  <h3 class="text-xl font-semibold text-green-900 mb-2">Message Sent!</h3>
+  <p class="text-green-700 mb-4">
+    Thanks for reaching out. We'll get back to you as soon as possible.
+  </p>
+  <button hx-get="{% url 'contact' %}"
+          hx-target="#contact-form-wrapper"
+          hx-swap="innerHTML"
+          class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+    Send Another Message
+  </button>
+</div>

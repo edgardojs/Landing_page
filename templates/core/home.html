@@ -1,0 +1,212 @@
+<!-- Landing page (mobile-first) -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home — Modern Landing Page{% endblock %}
+
+{% block meta_description %}
+  Modern, mobile-first landing page with Tailwind, Font Awesome, smooth scroll, and HTMX-powered newsletter signup.
+{% endblock %}
+
+{% block extra_css %}
+  <style>
+    /* Subtle animated gradient background for hero */
+    .hero-gradient {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    .glass {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 3px; }
+  </style>
+{% endblock %}
+
+{% block content %}
+
+  <!-- Hero Section -->
+  <section class="relative hero-gradient text-white min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Subtle animated bg elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-purple-400/20 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center py-12">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+        Build <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300">beautiful</span><br>mobile-first experiences
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-200/90 mb-8 max-lg:px-4">
+        Clean design, Tailwind-powered styling, and HTMX-powered interactions for fast, delightful user experiences.
+      </p>
+      
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#features" class="px-7 py-3 bg-white text-indigo-600 font-semibold rounded-full shadow-lg hover:bg-gray-100 transition">
+          Explore Features
+        </a>
+        <a href="#newsletter" class="px-7 py-3 bg-indigo-500/20 backdrop-blur text-white font-semibold rounded-full border border-indigo-400/30 hover:bg-indigo-500/30 transition">
+          <i class="fa-solid fa-envelope mr-2"></i>Subscribe
+        </a>
+      </div>
+      
+      <!-- Scroll hint -->
+      <div class="mt-12 animate-bounce">
+        <a href="#features" class="text-white/80 hover:text-white transition">
+          <span class="sr-only">Scroll</span>
+          <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 bg-white smooth-scroll">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Why this stack?</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">Tailwind + HTMX + Font Awesome gives you a fast, maintainable, and polished UI without a heavy framework.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+          <div class="w-12 h-10 mb-4 text-indigo-600">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Fast & Lightweight</h3>
+          <p class="text-gray-600 text-sm">Tailwind generates minimal CSS; HTMX adds interactivity without a heavy JS framework.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+          <div class="w-12 h-10 mb-4 text-green-600">
+            <i class="fa-solid fa-icons"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Beautiful Icons</h3>
+          <p class="text-gray-600 text-sm">Font Awesome gives you a vast, recognizable icon library with zero setup.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+          <div class="w-12 h-10 mb-4 text-purple-600">
+            <span class="material-symbols-outlined text-2xl">brush</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Custom Design</h3>
+          <p class="text-gray-600 text-sm">Easily build a branded experience tailored to your product and users.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+          <div class="w-12 h-10 mb-4 text-orange-600">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Mobile-First</h3>
+          <p class="text-gray-600 text-sm">Fully responsive out of the box, with content-first mobile navigation.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+          <div class="w-12 h-10 mb-4 text-teal-600">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Clean Code</h3>
+          <p class="text-gray-600 text-sm">Django templates that stay simple and easy to maintain.</p>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+          <div class="w-12 h-10 mb-4 text-rose-600">
+            <i class="fa-solid fa-bell"></i>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Progressive</h3>
+          <p class="text-gray-600 text-sm">Start simple and add Alpine or more interactivity only where needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Built for real projects</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            This template follows the Django best-practices and UI recommendations: clean layouts, sensible spacing, readable typography, and a focused component strategy.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            It avoids over-engineering—no React required—and keeps your frontend simple to learn and maintain.
+          </p>
+        </div>
+        <div class="mt-10 lg:mt-0">
+          <div class="grid grid-cols-3 gap-4">
+            <div class="text-center py-4 rounded-lg bg-white shadow-sm">
+              <div class="text-2xl font-bold text-indigo-600">12+</div>
+              <div class="text-sm text-gray-500">Components</div>
+            </div>
+            <div class="text-center py-4 rounded-lg bg-white shadow-sm">
+              <div class="text-2xl font-bold text-purple-600">4.8</div>
+              <div class="text-sm text-gray-500">Avg. Speed</div>
+            </div>
+            <div class="text-center py-4 rounded-lg bg-white shadow-sm">
+              <div class="text-2xl font-bold text-green-600">99%</div>
+              <div class="text-sm text-gray-500">Uptime</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section id="newsletter" class="py-20 bg-gradient-to-r from-indigo-600 to-purple-600">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Join the community</h2>
+      <p class="text-indigo-100/80 mb-8 max-lg:px-4">Get curated tips, product updates, and early access.</p>
+
+      <!-- Newsletter Form with HTMX -->
+      <div class="w-full max-w-lg mx-auto">
+        <form hx-post="/api/subscribe/" 
+              hx-target="#form-result"
+              hx-swap="outerHTML"
+              hx-indicator="#submit-btn"
+              class="flex flex-col sm:flex-row gap-3">
+          <input type="email" 
+                 name="email" 
+                 placeholder="you@company.com"
+                 required
+                 autocomplete="email"
+                 class="flex-1 px-5 py-3 bg-white/15 border border-white/20 backdrop-blur rounded-lg text-white placeholder-gray-200 focus:outline-none focus:border-white/50 focus:ring-1 focus:ring-white transition">
+          
+          <button type="submit" 
+                  id="submit-btn"
+                  class="px-7 py-3 bg-white text-indigo-600 font-semibold rounded-lg shadow hover:bg-gray-100 transition disabled:opacity-50">
+            <span class="hidden sm:inline">Subscribe</span>
+            <span class="sm:hidden text-lg"><i class="fa-solid fa-paper-plane"></i></span>
+          </button>
+        </form>
+
+        <div id="form-result" class="mt-4 text-sm text-white/90 min-h-[1.2em]"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-3">Ready to ship faster?</h2>
+      <p class="text-gray-500 mb-8 max-lg:px-4">Start with this template and iterate quickly with your team.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#features" class="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition">
+          Get Started
+        </a>
+        <a href="#contact" class="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block extra_js %}
+  <script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
