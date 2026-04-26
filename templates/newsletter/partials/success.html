@@ -1,0 +1,7 @@
+<div class="rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-green-800">
+  {% if created %}
+    Thanks{% if email %}, <span class="font-medium">{{ email }}</span>{% endif %}. You’re subscribed.
+  {% else %}
+    <span class="font-medium">{{ email }}</span> is already subscribed.
+  {% endif %}
+</div>
