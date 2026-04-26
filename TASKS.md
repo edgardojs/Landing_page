@@ -25,7 +25,7 @@
   - Form usability on small screens
   - Report: MOBILE_FIRST_REPORT.md
 
-- [ ] **Speed validation (Core Web Vitals)**
+- [x] **Speed validation (Core Web Vitals)**
   - LCP < 2.5 s
   - CLS < 0.1
   - INP < 200 ms
