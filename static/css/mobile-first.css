@@ -1,0 +1,136 @@
+/* =====================================================
+   Mobile-First Enhancements — Phase 4 UX Polish
+   Reference: best_ux_sites_2026.md (GOV.UK, USWDS, Material 3)
+   ===================================================== */
+
+/* ---------- Minimum Touch Targets ---------- */
+/* WCAG 2.5.5: 44×44px minimum
+   Apple HIG: 44×44pt
+   Material Design: 48×48dp */
+
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+a.btn,
+a.button,
+nav a,
+.mobile-menu-toggle {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Larger touch targets for primary actions */
+.btn-primary,
+button[type="submit"],
+.cta-button {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+/* Navbar mobile toggle */
+.mobile-menu-toggle {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 12px; /* Ensure 44px total */
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="number"],
+input[type="search"],
+textarea,
+select {
+  min-height: 44px;
+  padding: 12px 16px;
+}
+
+/* ---------- Responsive Breakpoints ---------- */
+/* Tailwind defaults: sm:640px md:768px lg:1024px xl:1280px 2xl:1536px */
+
+/* Mobile-first base (default: 320px–639px) */
+@media (max-width: 639px) {
+  /* Stack layouts */
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+  
+  /* Full-width on mobile */
+  .mobile-full {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Larger touch targets on small screens */
+  button,
+  [role="button"],
+  input[type="submit"] {
+    min-height: 48px;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Readable text */
+  body {
+    font-size: 16px; /* Prevent iOS zoom on input focus */
+  }
+  
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* Prevent iOS zoom */
+  }
+}
+
+/* Tablet (640px–1023px) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .tablet-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .desktop-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- Progressive Disclosure ---------- */
+/* Show/hide based on screen size */
+.mobile-only {
+  display: block;
+}
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* ---------- Print Styles ---------- */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}
