@@ -256,3 +256,49 @@ Recommended next work:
 ## License
 
 Add a license file if this project will be distributed publicly.
+
+## Phase 4 — UX Polish (Active)
+
+Goals and rubric derived from `best_ux_sites_2026.md` (Drive `oc inbox`).
+
+### Checklist
+
+- [ ] **Accessibility audit vs. WCAG 2.2 AA**
+  - Run automated scans (axe, WAVE, Lighthouse accessibility)
+  - Verify keyboard navigation and focus order
+  - Check color contrast ratios (minimum 4.5:1 for normal text)
+  - Validate ARIA labels and landmarks
+  - Test with screen reader (NVDA/VoiceOver)
+
+- [ ] **Variable‑font / typography alignment**
+  - Evaluate current font stack against references:
+    - Apple SF Pro (system font, variable optical sizes)
+    - IBM Plex (open-source, variable weight/width)
+    - Roboto Flex (Material 3 variable font)
+    - Shopify Inter / Polaris type scale
+  - Implement responsive type scale with CSS custom properties
+  - Ensure font-loading discipline (font-display: swap)
+
+- [ ] **Mobile‑first confirmation**
+  - Verify touch targets ≥ 44×44 px
+  - Test progressive disclosure patterns
+  - Confirm responsive breakpoints work at 320 px, 768 px, 1024 px, 1440 px
+  - Validate hamburger menu and collapsible sections
+  - Test form usability on small screens
+
+- [ ] **Speed validation**
+  - Target Core Web Vitals:
+    - LCP (Largest Contentful Paint) < 2.5 s
+    - CLS (Cumulative Layout Shift) < 0.1
+    - INP (Interaction to Next Paint) < 200 ms
+  - Run Lighthouse performance audit
+  - Optimize images (WebP/AVIF, lazy loading)
+  - Minimize render-blocking resources
+  - Verify Tailwind CSS purge/minification
+
+### References
+- GOV.UK Design System: https://design-system.service.gov.uk/
+- USWDS: https://designsystem.digital.gov/
+- Material Design 3: https://m3.material.io/
+- IBM Carbon: https://carbondesignsystem.com/
+- Shopify Polaris: https://polaris-react.shopify.com/
