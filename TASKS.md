@@ -9,7 +9,7 @@
   - ARIA labels and landmarks
   - Screen reader test (NVDA/VoiceOver)
 
-- [ ] **Variable‑font / typography alignment**
+- [x] **Variable‑font / typography alignment**
   - Evaluate current font stack
   - Implement responsive type scale
   - Font-loading discipline (font-display: swap)
