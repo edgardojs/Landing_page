@@ -1,3 +1,3 @@
 from django.contrib import admin
 
-# Register your models here.
+# Legal app has no models to register.
