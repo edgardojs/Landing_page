@@ -164,11 +164,13 @@
 
       <!-- Newsletter Form with HTMX -->
       <div class="w-full max-w-lg mx-auto">
-        <form hx-post="/api/subscribe/" 
+        <form hx-post="{% url 'newsletter_signup' %}"
               hx-target="#form-result"
               hx-swap="outerHTML"
               hx-indicator="#submit-btn"
               class="flex flex-col sm:flex-row gap-3">
+          {% csrf_token %}
+          <input type="hidden" name="source" value="home_hero">
           <input type="email" 
                  name="email" 
                  placeholder="you@company.com"

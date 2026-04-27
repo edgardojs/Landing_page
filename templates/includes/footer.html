@@ -68,7 +68,7 @@
               hx-target="#footer-form-result"
               hx-swap="outerHTML"
               class="flex flex-col sm:flex-row gap-2">
-          <csrftoken>
+          {% csrf_token %}
           <input type="email" 
                  name="email" 
                  placeholder="your@email.com"
